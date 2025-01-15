@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floricultura PINKBLUE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/tulipicon.png' %}">
+</head>
+<body>
+    <header class="text-white py-3">
+        <div class="container">
+            <img src="{% static 'images/tulipicon.png' %}" alt="Logo da Floricultura" class="logo">
+            <h1 class="mt-5">
+                <span class="fonte-meow">Bem-vindo à Floricultura</span>
+                <span class="fonte-noto"> PINKBLUE</span>
+            </h1>   
+        </div>
+    </header>
+
+    <div class="container2 text-center">
+        <h1 class="mt-5">
+            <span class="fonte-meow">Floricultura</span><br>
+            <span class="fonte-noto"> PINKBLUE</span>
+        </h1>        
+        <p>Preencha o formulário abaixo caso tenha interesse:</p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <footer class="text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Floricultura PINKBLUE | Todos os direitos reservados</p>
+            <p>Entre em contato: <a href="mailto:floriculturapb@pinkblue.com.br" class="text-white">floriculturapb@pinkblue.com.br</a></p>
+        </div>
+    </footer>
+</body>
+</html>
